@@ -2,9 +2,6 @@ package com.canoo.spi;
 
 import javafx.scene.image.Image;
 
-/**
- * Created by hendrikebbers on 12.12.17.
- */
 public class Santa implements Character {
 
     @Override
