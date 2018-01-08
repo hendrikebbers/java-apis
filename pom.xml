@@ -24,6 +24,7 @@
         <module>spi-basic</module>
         <module>spi-extended</module>
         <module>spi-app</module>
+        <module>spi-app2</module>
     </modules>
 
 </project>

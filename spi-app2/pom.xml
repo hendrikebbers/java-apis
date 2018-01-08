@@ -11,12 +11,12 @@
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>spi-app</artifactId>
+    <artifactId>spi-app2</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>spi-extended</artifactId>
+            <artifactId>spi-basic</artifactId>
             <version>${version}</version>
         </dependency>
     </dependencies>

@@ -8,8 +8,9 @@ public class InterceptorApp {
 
         final ProxyFactory proxyFactory = new ProxyFactory();
 
-        CharSequence charSequence = proxyFactory.createProxy(CharSequence.class, "Hallo");
-        charSequence.toString();
+        MyServiceI service = proxyFactory.createProxy(MyServiceI.class, new MyService());
+        service.method1();
+        service.method2();
     }
 
 }

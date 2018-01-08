@@ -1,13 +1,11 @@
 package com.canoo.nullable;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ServiceTest {
 
     @Test
-    @Ignore
     public void testAddBean() {
         //given:
         Repository repository = new Repository();
@@ -22,7 +20,6 @@ public class ServiceTest {
     }
 
     @Test
-    @Ignore
     public void testFindBean() {
         //given:
         Repository repository = new Repository();

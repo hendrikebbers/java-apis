@@ -10,8 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -34,13 +32,8 @@ public class SpiApplication extends Application {
             StackPane charBox = new StackPane();
             charBox.setAlignment(Pos.TOP_LEFT);
 
-            final Text title = new Text(character.getName());
-            title.setFill(javafx.scene.paint.Color.ORANGE);
-            title.setStroke(Color.BLACK);
-            title.setStrokeWidth(0.5);
-            title.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
             final CharacterView view = new CharacterView(character);
-            charBox.getChildren().addAll(view, title);
+            charBox.getChildren().addAll(view);
             mainPane.getChildren().add(charBox);
 
             Tooltip.install(view, new Tooltip(character.getDescription()));

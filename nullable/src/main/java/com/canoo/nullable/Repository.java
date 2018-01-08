@@ -2,6 +2,8 @@ package com.canoo.nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 public class Repository {
@@ -31,19 +33,22 @@ public class Repository {
     }
 
     public void add(Entity e) {
-        long id = e.getId();
-        String name = e.getName();
-        LOG.info("Adding entity " + id +" with name " + name + " to database");
+        Objects.requireNonNull(e, "e should not be null");
+
+        long id = Optional.ofNullable(e.getId()).orElse(-1L);
+
+        LOG.info("Adding entity " + id +" to database");
         database.add(e);
     }
 
+    public Optional<Entity> findByIdOptional(Long id) {
+        return Optional.ofNullable(findById(id));
+    }
+
     public Entity findById(Long id) {
-        for(Entity e : database) {
-            if(e.getId().equals(id)) {
-                return e;
-            }
-        }
-        return null;
+        return database.stream().
+                filter(e -> Objects.equals(id, e.getId())).findAny().
+                orElse(null);
     }
 
     public boolean contains(Entity entity) {
