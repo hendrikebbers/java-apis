@@ -1,13 +1,11 @@
 package com.canoo.nullable;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ConverterTest {
 
     @Test
-    @Ignore
     public void testConvertToBean() {
         //given:
         Converter converter = new Converter();
@@ -22,7 +20,6 @@ public class ConverterTest {
     }
 
     @Test
-    @Ignore
     public void testConvertToEntity() {
         //given:
         Converter converter = new Converter();
